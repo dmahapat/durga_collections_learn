@@ -2,6 +2,7 @@ package com.collection.set;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 class Human{
@@ -48,7 +49,15 @@ public class SortingWithMultipleConditionExample {
         Comparator<Human> humanComparator = Comparator.comparing(Human::getAge)
                 .thenComparing(Human::getName);
         humans.sort(humanComparator);
-        humans.forEach(System.out::println);
+        //humans.forEach(System.out::println);
+
+        //Iterator iterator = humans.iterator();
+        /*
+        * Java 8 iterator addition
+        * */
+        System.out.println("JAVA 8 iterator new method - forEachRemaining");
+        humans.iterator()
+              .forEachRemaining(System.out::println);
 
     }
 }
